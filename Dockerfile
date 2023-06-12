@@ -1,6 +1,10 @@
-# !CACHING
 # setup the parent run time environment
 FROM node:17-alpine
+
+# installs the `nodemon` package
+# which listens to the changes made in the server code
+# and reflects on the running server
+RUN npm install -g nodemon
 
 # initialize the working directory
 WORKDIR /app
@@ -19,5 +23,5 @@ COPY . .
 EXPOSE 4000
 
 # execute commands on run time
-CMD [ "node", "app.js" ]
+CMD [ "npm", "run", "dev" ]
 
