@@ -19,7 +19,7 @@ RUN npm install
 # copy the files in the current directory to the image
 COPY . .
 
-# EXPOSE [container port] [local port]
+# EXPOSE [host_port]:[container_port]
 EXPOSE 4000
 
 # execute commands on run time
